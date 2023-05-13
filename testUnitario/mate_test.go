@@ -46,3 +46,23 @@ func TestGetMax(t *testing.T) {
 		}
 	}
 }
+
+func TestFibonnaci(t *testing.T) {
+	tabla := []struct {
+		n int
+		r int
+	}{
+		{0, 0},
+		{1, 1},
+		{2, 1},
+		{5, 5},
+		{10, 55},
+		{20, 6765},
+	}
+
+	for _, item := range tabla {
+		if r := Fibonnaci(item.n); r != item.r {
+			t.Errorf("Fibonnaci incorrecto, se esperaba %d y se obtuvo %d", item.r, r)
+		}
+	}
+}
